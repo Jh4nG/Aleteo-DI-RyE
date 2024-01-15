@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { Header } from './components/Header'
+import { Mundo } from './module/Mundo'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Header />
+      <Mundo />
     </>
   )
 }

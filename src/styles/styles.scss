@@ -1,4 +1,6 @@
-
+body {
+    background-color: black !important;
+}
 
 /*########## MIXIN MEDIAS QUERIES ##########*/
 @mixin breakPoint($size) {

@@ -63,12 +63,12 @@
     background: transparent;
     border-radius: 50%;
     border: 1.8px solid #fff;
-    transform: translateY(-37px) scale(0);
+    transform: translateY(-30px) scale(0);
 }
 .navigation ul li.active a .circle {
     transition: .5s;
     transition-delay: .5s;
-    transform: translateY(-37px) scale(1);
+    transform: translateY(-30px) scale(1);
 }
 .indicator {
     position: absolute;
@@ -106,17 +106,17 @@
     box-shadow: -1px -10px 0 #06021b;
 }
 .navigation ul li:nth-child(1).active~.indicator {
-    transform: translateX(calc(70px * 0));
+    transform: translateX(calc(-3px));
 }
 .navigation ul li:nth-child(2).active~.indicator {
-    transform: translateX(calc(70px * 1));
+    transform: translateX(calc(61px * 1));
 }
 .navigation ul li:nth-child(3).active~.indicator {
-    transform: translateX(calc(70px * 2));
+    transform: translateX(calc(62px * 2));
 }
 .navigation ul li:nth-child(4).active~.indicator {
-    transform: translateX(calc(70px * 3));
+    transform: translateX(calc(62.5px * 3));
 }
 .navigation ul li:nth-child(5).active~.indicator {
-    transform: translateX(calc(70px * 4));
+    transform: translateX(calc(62.8px * 4));
 }
