@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { Mundo } from './module/Mundo'
+import { Background } from './module/Background'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Mundo />
+      <Background />
     </>
   )
 }

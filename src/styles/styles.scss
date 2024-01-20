@@ -1,7 +1,3 @@
-body {
-    background-color: black !important;
-}
-
 /*########## MIXIN MEDIAS QUERIES ##########*/
 @mixin breakPoint($size) {
     @media (min-width: $size) {
@@ -18,4 +14,5 @@ $xxlarge: 1400px;
 $xxxlarge: 1500px;
 
 /*########## IMPORTACIONES ##########*/
+@import "./components/background";
 @import "./components/header";
