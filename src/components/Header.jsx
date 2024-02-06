@@ -30,7 +30,7 @@ export const Header = ({
                             <span className="icon">
                                 <FaUser />
                             </span>
-                            <span className="text">Profile</span>
+                            <span className="text">Profile 2</span>
                             <span className="circle"></span>
                         </a>
                     </li>

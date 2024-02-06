@@ -1,0 +1,40 @@
+.fix-nav {
+	position: fixed;
+	width: 256px;
+	height: 100%;
+	z-index: 9999 !important;
+
+	-webkit-transform: translate3d(-100%, 0px, 0px);
+	transform: translate3d(-100%, 0px, 0px);
+	visibility: visible;
+	transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+
+    &__content{
+        width: 280px;
+    }
+
+	&--close {
+		-webkit-transform: translate3d(0px, 0px, 0px);
+		transform: translate3d(0px, 0px, 0px);
+		visibility: visible;
+	}
+
+	i {
+		font-size: 25px;
+	}
+}
+
+.display-menu {
+	margin-left: 0.5%;
+	top: 2%;
+	position: fixed;
+	z-index: 999;
+
+	&--fixed-top {
+		position: fixed;
+		top: 2%;
+		background-color: transparent;
+		border: none;
+	}
+}

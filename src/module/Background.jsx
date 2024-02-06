@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Header } from "../components/Header";
-import { WorldComponent } from "./World/WorldComponent";
+import { FixNav } from "../components/FixNav";
+import WorldComponent from "./World/WorldComponent";
 
 export const Background = () => {
 
@@ -13,6 +14,7 @@ export const Background = () => {
 
     return (
         <div className={`bg bg__${bgAnimation}`}>
+            <FixNav />
             <Header 
                 bgAnimation={bgAnimation}
                 setAnimation={handleBgAnimation}

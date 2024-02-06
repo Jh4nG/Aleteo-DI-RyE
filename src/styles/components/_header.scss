@@ -2,13 +2,14 @@
     position: absolute;
     bottom: 5%;
     left: 37%;
-    width: 400px;
-    height: 70px;
+    width: 25%;
+    height: 9%;
     background: linear-gradient(45deg, #2196f3, #e91e63);
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    z-index: 1;
 
     ul {
         display: flex;
