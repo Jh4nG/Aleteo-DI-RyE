@@ -1,7 +1,6 @@
 import { FaHome, FaUser, FaRegEnvelope, FaPhotoVideo, FaWhmcs } from 'react-icons/fa'
 export const Header = ({
-    bgAnimation,
-    setAnimation
+    setSection
 }) => {
 
     const activeLink = (e) => {
@@ -17,51 +16,42 @@ export const Header = ({
             <div className="navigation">
                 <ul>
                     <li className="list active">
-                        <a href="#" onClick={(e)=>{activeLink(e); setAnimation('black')}}>
+                        <a href="#" onClick={(e)=>{activeLink(e); setSection('RostrosYEspacios')}}>
                             <span className="icon">
                                 <FaHome />
                             </span>
-                            <span className="text">Home</span>
+                            <span className="text">Rostros y espacios </span>
                             <span className="circle"></span>
                         </a>
                     </li>
                     <li className="list">
-                        <a href="#" onClick={(e)=>{activeLink(e); setAnimation('red')}}>
+                        <a href="#" onClick={(e)=>{activeLink(e); setSection('ImagenComparada')}}>
                             <span className="icon">
                                 <FaUser />
                             </span>
-                            <span className="text">Profile 2</span>
+                            <span className="text">Narraciones barriales</span>
                             <span className="circle"></span>
                         </a>
                     </li>
                     <li className="list">
-                        <a href="#" onClick={(e)=>{activeLink(e); setAnimation('green')}}>
+                        <a href="#" onClick={(e)=>{activeLink(e); setSection('SinforniaDeUnaLocalidad')}}>
                             <span className="icon">
                                 <FaRegEnvelope />
                             </span>
-                            <span className="text">Message</span>
+                            <span className="text">Imagen comparada</span>
                             <span className="circle"></span>
                         </a>
                     </li>
                     <li className="list">
-                        <a href="#" onClick={(e)=>{activeLink(e); setAnimation('yellow')}}>
+                        <a href="#" onClick={(e)=>{activeLink(e); setSection('NarracionesBarriales')}}>
                             <span className="icon">
                                 <FaPhotoVideo />
                             </span>
-                            <span className="text">Photos</span>
+                            <span className="text">Sinfonía de una localidad</span>
                             <span className="circle"></span>
                         </a>
                     </li>
-                    <li className="list">
-                        <a href="#" onClick={(e)=>{activeLink(e); setAnimation('blue')}}>
-                            <span className="icon">
-                                <FaWhmcs />
-                            </span>
-                            <span className="text">Settings</span>
-                            <span className="circle"></span>
-                        </a>
-                    </li>
-                    <div className={`indicator indicator__${bgAnimation}`}></div>
+                    <div className={`indicator`}></div>
                 </ul>
             </div>
         </>

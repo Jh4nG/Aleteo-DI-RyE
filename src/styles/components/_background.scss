@@ -1,24 +1,19 @@
+/*########## MIXIN MEDIAS QUERIES ##########*/
+@mixin breakPoint($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
 .bg{
     width: 100%;
     height: 100vh;
+    background-image: url('/tmpCielo.webp');
+    background-size: cover;
+}
 
-    &__blue{
-        background-color : blue;
-    }
-
-    &__red{
-        background-color : red;
-    }
-
-    &__yellow{
-        background-color : yellow;
-    }
-
-    &__green{
-        background-color : green;
-    }
-
-    &__black{
-        background-color : black;
+@keyframes animation {
+    100%{
+        background-position:0px -3000px;
     }
 }

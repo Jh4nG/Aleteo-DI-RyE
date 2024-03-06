@@ -1,10 +1,9 @@
 .navigation {
     position: absolute;
-    bottom: 5%;
-    left: 37%;
-    width: 25%;
+    bottom: 1%;
+    left: 25%;
+    width: 50%;
     height: 9%;
-    background: linear-gradient(45deg, #2196f3, #e91e63);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,13 +12,12 @@
 
     ul {
         display: flex;
-        width: 350px;
-        padding-left: 0rem !important;
+        width: 100%;
 
         li {
             position: relative;
-            width: 70px;
-            height: 70px;
+            width: 25%;
+            height: 25%;
             list-style: none;
             z-index: 1;
 
@@ -62,14 +60,14 @@
                     background: transparent;
                     border-radius: 50%;
                     border: 1.8px solid #fff;
-                    transform: translateY(-29px) scale(0);
+                    transform: translateY(-24px) scale(0);
                 }
             }
         }
 
         li.active a {
             .icon {
-                transform: translateY(-32px);
+                transform: translateY(-29px);
             }
 
             .text {
@@ -80,7 +78,7 @@
             .circle {
                 transition: .5s;
                 transition-delay: .5s;
-                transform: translateY(-29px) scale(1);
+                transform: translateY(-24px) scale(1);
             }
         }
         
@@ -109,86 +107,11 @@
 .indicator {
     position: absolute;
     top: -50%;
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(45deg, #2196f3, #e91e63);
+    width: 25%;
+    height: 25%;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: .5s;
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: -22px;
-        width: 20px;
-        height: 20px;
-        background: transparent;
-        border-top-right-radius: 20px;
-        box-shadow: 1px -10px 0 #06021b;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        right: -22px;
-        width: 20px;
-        height: 20px;
-        background: transparent;
-        border-top-left-radius: 20px;
-        box-shadow: -1px -10px 0 #06021b;
-    }
-
-    &__black {
-        border: 6px solid #06021b;
-        &::before{
-            box-shadow: 1px -10px 0 #06021b !important;
-        }
-        &::after{
-            box-shadow: -1px -10px 0 #06021b !important;
-        }
-    }
-
-    &__green {
-        border: 6px solid green;
-        &::before{
-            box-shadow: 1px -10px 0 green !important;
-        }
-        &::after{
-            box-shadow: -1px -10px 0 green !important;
-        }
-    }
-
-    &__yellow {
-        border: 6px solid yellow;
-        &::before{
-            box-shadow: 1px -10px 0 yellow !important;
-        }
-        &::after{
-            box-shadow: -1px -10px 0 yellow !important;
-        }
-    }
-
-    &__blue {
-        border: 6px solid blue;
-        &::before{
-            box-shadow: 1px -10px 0 blue !important;
-        }
-        &::after{
-            box-shadow: -1px -10px 0 blue !important;
-        }
-    }
-
-    &__red {
-        border: 6px solid red;
-        &::before{
-            box-shadow: 1px -10px 0 red !important;
-        }
-        &::after{
-            box-shadow: -1px -10px 0 red !important;
-        }
-    }
 }

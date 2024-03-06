@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { FaAngleDoubleRight, FaFacebookF, FaInstagram, FaWindowClose } from "react-icons/fa";
+import { FaAngleDoubleLeft, FaFacebookF, FaInstagram, FaRegWindowClose } from "react-icons/fa";
+import { ModalPrincipal } from "./ModalPrincipal";
 
 export const FixNav = () => {
    const [flatOpenSide, setFlatOpenSide] = useState(false);
+   const [modalOpen, setModalOpen] = useState(false);
 
    const showSideBar = (action) => {
       if (action) {
@@ -12,11 +14,19 @@ export const FixNav = () => {
       }
    }
 
+   const handleModalOpen = ()=> {
+      setModalOpen(!modalOpen);
+   }
+
    return (
       <>
+         <ModalPrincipal 
+            modalIsOpen={modalOpen}
+            handleModalOpen={handleModalOpen}
+         />
          <div className={`display-menu ${flatOpenSide && 'd-none'}`}>
             <button type="button" className="btn btn-dark" onClick={()=>{showSideBar(true)}}>
-               <FaAngleDoubleRight />
+               <FaAngleDoubleLeft />
             </button>
          </div>
 
@@ -25,8 +35,8 @@ export const FixNav = () => {
                <div className="col-12">
                   <div className="row">
                      <div className="col-3">
-                        <a className="btn btn-dark" onClick={()=>{showSideBar(false)}}>
-                           <FaWindowClose />
+                        <a className="btn" onClick={()=>{showSideBar(false)}}>
+                           <FaRegWindowClose />
                         </a>
                      </div>
                      <div className="col-9">
@@ -38,7 +48,7 @@ export const FixNav = () => {
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
                <li className="nav-item">
-                  <a onClick={()=>{showSideBar(false)}} data-bs-toggle="modal" data-bs-target="#sobreNosotros" href="#" className="nav-link text-white" aria-current="page">
+                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} data-bs-toggle="modal" data-bs-target="#sobreNosotros" href="#" className="nav-link text-white" aria-current="page">
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#home" />
                      </svg>
@@ -46,7 +56,7 @@ export const FixNav = () => {
                   </a>
                </li>
                <li>
-                  <a onClick={()=>{showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#CreditosModal" className="nav-link text-white">
+                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#CreditosModal" className="nav-link text-white">
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#speedometer2" />
                      </svg>
@@ -54,7 +64,7 @@ export const FixNav = () => {
                   </a>
                </li>
                <li>
-                  <a onClick={()=>{showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#ContactenosModal" className="nav-link text-white">
+                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#ContactenosModal" className="nav-link text-white">
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#table" />
                      </svg>

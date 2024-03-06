@@ -1,56 +1,53 @@
-import { useEffect } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { OrbitControls } from '@react-three/drei'
-import { Canvas, useLoader } from '@react-three/fiber'
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader'
+import { Canvas } from '@react-three/fiber'
+import { Chinche } from './components/Chinche';
+import { Scene } from './components/Scene';
+import { PointerChinche } from '../../resource/chinchePoints';
 
-export default function WorldComponent() {
-    const gltf = useLoader(GLTFLoader, '/mundo/scene.gltf');
-    const { scene, nodes } = gltf;
-    let positionWorld = nodes.Nido.position;
+export default function WorldComponent( { section } ) {
 
-    const init = () => {
-        nodes.Nido1.visible = false;
-        nodes.Nido2.visible = false;
-        nodes.Nido3.visible = false;
-        nodes.Nido4.visible = false;
-    }
-
+    const [pointerActual, setPointerActual] = useState(PointerChinche['RostrosYEspacios']);
     const getInteraction = (e) => {
-        if(nodes.Nido.position === positionWorld){
-            switch(e.object.name){
-                case 'Nido':
-                    nodes.Nido1.visible = true;
-                    nodes.Nido2.visible = true;
-                    nodes.Nido3.visible = true;
-                    nodes.Nido4.visible = true;
-                    break;
-                default:
-                    break;
-            }
-        }else{
-            positionWorld = nodes.Nido.position
-        }        
+        console.log(e);
     }
 
-    useEffect(() => {
-        init();
-    }, [])
+    useEffect(()=>{
+        setPointerActual(PointerChinche[section]);
+    },[section])
 
     return (
-        <Canvas camera={{ position: [15, 10, 20] }} shadows>
-            <primitive
-                object={scene}
-                position={[0, -5, 0]}
-                children-0-castShadow
-                onChange={(e) =>( console.log(e))}
-                onClick={(e) =>( e.stopPropagation(), getInteraction(e))}
-            />
-            <mesh 
-                object={nodes.Nido.geometry}
-            />
-            <OrbitControls
-                target={[0, 1, 0]}
-            />
-        </Canvas>
+        <>
+            <Canvas>
+                <Suspense fallback={null}>
+                    {/* Luz ambiente */}
+                    <ambientLight 
+                        color={'white'}
+                        intensity={1}
+                    />
+                    {/* Mapa */}
+                    <Scene 
+                        section={section}
+                    /> 
+                    {/* Punto de luz */}
+                    <directionalLight color="white" position={[0, 0, 5]} />
+                    {/* Control de Mapa */}
+                    <OrbitControls
+                        target={[0, 0, 0]}
+                    />
+
+                    {pointerActual && 
+                        pointerActual.map(({scale, position, rotation, action})=>{
+                            return <Chinche 
+                                scale={scale}
+                                position={position}
+                                rotation={rotation}
+                                onClick={()=>{getInteraction(action)}}
+                            />
+                        })
+                    }
+                </Suspense>
+            </Canvas>
+        </>
     )
 }

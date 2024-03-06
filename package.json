@@ -15,11 +15,19 @@
     "@react-three/fiber": "^8.15.13",
     "@types/three": "^0.160.0",
     "bootstrap": "^5.3.2",
+    "dat.gui": "^0.7.9",
+    "gltf-pipeline": "^4.1.0",
+    "gltf-validator": "^2.0.0-dev.3.9",
+    "query-string": "^8.2.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-modal": "^3.16.1",
-    "three": "^0.160.0"
+    "react-photo-sphere-viewer": "^4.2.1-psv5.6.0",
+    "simple-dropzone": "^0.8.3",
+    "three": "^0.160.0",
+    "vhtml": "^2.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

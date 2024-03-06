@@ -5,21 +5,21 @@ import WorldComponent from "./World/WorldComponent";
 
 export const Background = () => {
 
-    const [bgAnimation, setBgAnimation] = useState('black');
+    const [section, setSection] = useState('RostrosYEspacios');
 
-    const handleBgAnimation = (bg) => {
-        console.log(bg);
-        setBgAnimation(bg);
+    const handleSection = (section) => {
+        setSection(section);
     }
 
     return (
-        <div className={`bg bg__${bgAnimation}`}>
+        <div className={`bg`}>
             <FixNav />
             <Header 
-                bgAnimation={bgAnimation}
-                setAnimation={handleBgAnimation}
+                setSection={handleSection}
             />
-            <WorldComponent />
+            <WorldComponent 
+                section={section}
+            />
         </div>
     )
 }

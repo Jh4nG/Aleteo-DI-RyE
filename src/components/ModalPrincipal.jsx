@@ -1,34 +1,35 @@
-export const ModalPrincipal = ({modalIsOpen}) => {
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import { ViewImage360Component } from './ViewImage360';
+
+export const ModalPrincipal = ({ modalIsOpen, handleModalOpen }) => {
     let subtitle;
-    const [modalIsOpen, setIsOpen] = React.useState(false);
 
-    function afterOpenModal() {
-        // references are now sync'd and can be accessed.
-        subtitle.style.color = '#f00';
-    }
-
-    function closeModal() {
+    const closeModal = () => {
         setIsOpen(false);
     }
+
     return (
         <>
-            <Modal
-                isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
-                onRequestClose={closeModal}
-                style={customStyles}
-                contentLabel="Example Modal"
+            <Modal 
+                show={modalIsOpen} 
+                onHide={handleModalOpen}
+                size="xl"
             >
-                <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-                <button onClick={closeModal}>close</button>
-                <div>I am a modal</div>
-                <form>
-                    <input />
-                    <button>tab navigation</button>
-                    <button>stays</button>
-                    <button>inside</button>
-                    <button>the modal</button>
-                </form>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <ViewImage360Component />
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleModalOpen}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleModalOpen}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
             </Modal>
         </>
     )
