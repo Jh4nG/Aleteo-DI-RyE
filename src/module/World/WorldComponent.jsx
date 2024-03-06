@@ -1,5 +1,5 @@
 import { Suspense, useEffect, useState } from 'react';
-import { OrbitControls } from '@react-three/drei'
+import { Environment, OrbitControls, useEnvironment } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { Chinche } from './components/Chinche';
 import { Scene } from './components/Scene';
@@ -7,6 +7,7 @@ import { PointerChinche } from '../../resource/chinchePoints';
 
 export default function WorldComponent( { section } ) {
 
+    const envMap = useEnvironment({files : '/img/Background.hdr'});
     const [pointerActual, setPointerActual] = useState(PointerChinche['RostrosYEspacios']);
     const getInteraction = (e) => {
         console.log(e);
@@ -35,6 +36,8 @@ export default function WorldComponent( { section } ) {
                     <OrbitControls
                         target={[0, 0, 0]}
                     />
+
+                    <Environment map={envMap} background />
 
                     {pointerActual && 
                         pointerActual.map(({scale, position, rotation, action})=>{
