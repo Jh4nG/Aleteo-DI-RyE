@@ -84,7 +84,7 @@ export default function WorldComponent( { section } ) {
 
     return (
         <>
-            <Canvas camera={[10,10,10]}>
+            <Canvas>
                 <Suspense fallback={null}>
                     {/* Luz ambiente */}
                     <ambientLight 
