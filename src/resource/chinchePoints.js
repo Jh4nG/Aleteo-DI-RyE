@@ -103,14 +103,7 @@ const PointerChinche = {
             rotation : [1, 6, 4]
         }
     ],
-    'NarracionesBarriales' : [
-        {
-            scale : 0.1,
-            position : [1.8, 1.5, -1],
-            action : 'Pointer1',
-            rotation : [-.6, 3, .7]
-        }
-    ]
+    'NarracionesBarriales' : []
 }
 export {
     PointerChinche

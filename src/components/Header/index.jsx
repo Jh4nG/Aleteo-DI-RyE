@@ -42,23 +42,6 @@ export const Header = ({
                         </a>
                     </li>
                     <li className="list">
-                        <a href="#" onClick={(e)=>{activeLink(e); setSection('NarracionesBarriales')}}>
-                            <span className="icon">
-                                <CanvasComponents 
-                                    Content={
-                                        <Cuadro 
-                                            position={[0,0,0]}
-                                            scale={3} 
-                                        />
-                                    }
-                                    target={[.7, 0, 0]}
-                                />
-                            </span>
-                            <span className="text">Narraciones barriales</span>
-                            <span className="circle"></span>
-                        </a>
-                    </li>
-                    <li className="list">
                         <a href="#" onClick={(e)=>{activeLink(e); setSection('ImagenComparada')}}>
                             <span className="icon">
                                 <CanvasComponents 
@@ -81,6 +64,23 @@ export const Header = ({
                                 />
                             </span>
                             <span className="text">Sinfonía de una localidad</span>
+                            <span className="circle"></span>
+                        </a>
+                    </li>
+                    <li className="list">
+                        <a href="#" onClick={(e)=>{activeLink(e); setSection('NarracionesBarriales')}}>
+                            <span className="icon">
+                                <CanvasComponents 
+                                    Content={
+                                        <Cuadro 
+                                            position={[0,0,0]}
+                                            scale={3} 
+                                        />
+                                    }
+                                    target={[.7, 0, 0]}
+                                />
+                            </span>
+                            <span className="text">Narraciones barriales</span>
                             <span className="circle"></span>
                         </a>
                     </li>

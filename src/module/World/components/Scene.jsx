@@ -4,10 +4,10 @@ import { TextureLoader } from 'three';
 
 export function Scene( {section} ) {
 
-    const RostrosYEspacios = useLoader(TextureLoader, '/img/RostrosYEspaciosSenal.png');
+    const RostrosYEspacios = useLoader(TextureLoader, '/img/RostrosYEspacios.png');
     const ImagenComparada = useLoader(TextureLoader, '/img/ImagenComparadaSenal.png');
     const SinforniaDeUnaLocalidad = useLoader(TextureLoader, '/img/SinfoniaDeUnaLocalidadSenal.png');
-    const NarracionesBarriales = useLoader(TextureLoader, '/img/NarracionesBarriales.png');
+    const NarracionesBarriales = useLoader(TextureLoader, '/img/RostrosYEspacios.png');
     const [mapTexture, setMapTexture] = useState(RostrosYEspacios);
 
     const getPosition = (e)=> {
@@ -42,8 +42,6 @@ export function Scene( {section} ) {
             // onClick={getPosition}
             >
             <sphereGeometry args={[2.5, 32, 32]} />
-            {/* <sphereGeometry args={[2.5, 32, 3]} /> */}
-            {/* <sphereGeometry args={[2.5, 5, 3]} /> */}
             <meshStandardMaterial 
                 map={mapTexture}
             />

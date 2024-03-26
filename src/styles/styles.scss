@@ -1,7 +1,27 @@
-body{
-    cursor: url('/public/puntero.png'), auto !important;
-    // cursor: pointer;
+// @font-face {
+//     font-family: 'fontRyE';
+//     src: url('./../assets/fonts/brankovic.ttf');
+// }
+
+@font-face {
+    font-family: 'fontRyE';
+    src: url('./../assets/fonts/erasdust.ttf');
 }
+
+// @font-face {
+//     font-family: 'fontRyE';
+//     src: url('./../assets/fonts/KingthingsTrypewriter2.ttf');
+// }
+
+// @font-face {
+//     font-family: 'fontRyE';
+//     src: url('./../assets/fonts/zai_CourierPolski1941_i.ttf');
+// }
+
+// @font-face {
+//     font-family: 'fontRyE';
+//     src: url('./../assets/fonts/zai_CourierPolski1941.ttf');
+// }
 
 /*########## BREAKPOINT ##########*/
 $small: 576px;
@@ -16,7 +36,16 @@ $xxxlarge: 1500px;
 @import "./components/header";
 @import "./components/fixNav";
 @import "./components/compareImage";
+@import "./components/PointerContent";
 
+
+*{
+    font-family: 'fontRyE' !important;
+}
+
+#root{
+    cursor: url('/puntero.png'), auto !important;
+}
 
 .viewer {
     width: 100%;
@@ -27,3 +56,4 @@ $xxxlarge: 1500px;
     top: 0;
     z-index: 0;
 }
+

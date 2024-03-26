@@ -6,8 +6,8 @@ export const ModalPointers = ({
         modalIsOpen, 
         title,
         Content,
-        buttons,
-        handleModalOpen
+        handleModalOpen,
+        classContent
      }) => {
     return (
         <>
@@ -16,6 +16,7 @@ export const ModalPointers = ({
                 show={modalIsOpen} 
                 onHide={handleModalOpen}
                 size="xl"
+                className={classContent}
             >
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>
@@ -23,11 +24,6 @@ export const ModalPointers = ({
                 <Modal.Body>
                     <Content />
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="secondary" onClick={handleModalOpen}>
-                        Cerrar
-                    </Button>
-                </Modal.Footer>
             </Modal>
         </>
     )

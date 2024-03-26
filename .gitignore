@@ -26,3 +26,6 @@ dist-ssr
 # Se omiten los gltf
 *.gltf
 *.glb
+
+# Fuentes 
+*.ttf

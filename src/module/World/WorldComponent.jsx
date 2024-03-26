@@ -8,6 +8,7 @@ import { ImagenComparadaComponent } from './sections/ImagenComparada';
 import { NarracionesBarrialesComponent } from './sections/NarracionesBarriales';
 import { RostrosYEspaciosComponent } from './sections/RostrosYEspacios';
 import { SinforniaDeUnaLocalidadComponent } from './sections/SinforniaDeUnaLocalidad';
+import { Mapa3D } from './components/Mapa3D';
 
 export default function WorldComponent( { section } ) {
 
@@ -78,7 +79,7 @@ export default function WorldComponent( { section } ) {
     }
 
     useEffect(()=>{
-        // animationRotate()
+        animationRotate()
         setPointerActual(PointerChinche[section]);
     },[section])
 
@@ -92,16 +93,23 @@ export default function WorldComponent( { section } ) {
                         intensity={.5}
                     />
                     {/* Mapa */}
-                    <Scene 
-                        section={section}
-                    /> 
+                    {section == 'NarracionesBarriales' ? (
+                        <Mapa3D 
+                            scale={7}
+                            rotation={[1.5,-1.4,0]}
+                        />
+                    ) : 
+                        <Scene 
+                            section={section}
+                        /> 
+                    }
                     {/* Punto de luz */}
                     <directionalLight color="white" position={[0, 0, 2]} />
                     {/* Control de Mapa */}
                     <OrbitControls
-                        autoRotate={rotateWorld}
+                        // autoRotate={rotateWorld}
                         autoRotateSpeed={100}
-                        minDistance={3}
+                        minDistance={(section == 'NarracionesBarriales') ? 1 : 3}
                         maxDistance={7}
                         target={[0, 0, 0]}
                     />

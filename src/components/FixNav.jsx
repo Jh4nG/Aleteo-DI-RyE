@@ -40,7 +40,10 @@ export const FixNav = () => {
                         </a>
                      </div>
                      <div className="col-9">
-                        <span className="fs-4">Aleteo</span>
+                        <span className="fs-4">
+                           Documental interactivo
+                           Rostros y espacios
+                        </span>
                      </div>
                   </div>
                </div>
