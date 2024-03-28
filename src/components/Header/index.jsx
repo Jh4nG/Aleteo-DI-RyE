@@ -1,16 +1,14 @@
-import { FaHome, FaUser, FaRegEnvelope, FaPhotoVideo, FaWhmcs } from 'react-icons/fa'
-import { Camara } from './components/Camara';
-import { Chinche } from './components/Chinche';
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
-import { OrbitControls } from '@react-three/drei';
+import { useEffect, useState } from 'react';
 import { CanvasComponents } from './components/CanvasComponent';
 import { Cassete } from './components/Casette';
 import { Cuadro } from './components/Cuadro';
-import { SiluetaMapa } from './components/SiluetaMapa';
+import { MapaSilueta } from './components/MapaSilueta';
+import { CameraComponent } from './components/Camera';
 export const Header = ({
     setSection
 }) => {
+
+    const [rotateLateralidad, setRotateLateralidad] = useState(1);
 
     const activeLink = (e) => {
         const list = document.querySelectorAll('.list');
@@ -19,7 +17,13 @@ export const Header = ({
         });
         e.target.closest('li').classList.add('active');
     }
-    
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            setRotateLateralidad(rotateLateralidad == 1 ? -1 : 1)
+        },10000)
+    },[rotateLateralidad]);
+
     return (
         <>
             <div className="navigation">
@@ -27,14 +31,16 @@ export const Header = ({
                     <li className="list active">
                         <a href="#" onClick={(e)=>{activeLink(e); setSection('RostrosYEspacios')}}>
                             <span className="icon">
-                                <CanvasComponents 
+                                <CanvasComponents
                                     Content={
-                                        <SiluetaMapa 
-                                            position={[1,2,0]}
-                                            scale={.15}
+                                        <MapaSilueta
+                                            position={[2.5,1,0]}
+                                            rotation={[1.5,-1.4,0]}
+                                            scale={3}
                                         />
                                     }
                                     target={[2, 1, 1]}
+                                    rotateLateralidad={rotateLateralidad}
                                 />
                             </span>
                             <span className="text">Rostros y espacios </span>
@@ -44,10 +50,13 @@ export const Header = ({
                     <li className="list">
                         <a href="#" onClick={(e)=>{activeLink(e); setSection('ImagenComparada')}}>
                             <span className="icon">
-                                <CanvasComponents 
+                                <CanvasComponents
                                     Content={
-                                        <Camara scale={10} />
+                                        <CameraComponent
+                                            scale={10}
+                                        />
                                     }
+                                    rotateLateralidad={rotateLateralidad}
                                 />
                             </span>
                             <span className="text">Imagen comparada</span>
@@ -57,10 +66,11 @@ export const Header = ({
                     <li className="list">
                         <a href="#" onClick={(e)=>{activeLink(e); setSection('SinforniaDeUnaLocalidad')}}>
                             <span className="icon">
-                                <CanvasComponents 
+                                <CanvasComponents
                                     Content={
                                         <Cassete scale={0.5} />
                                     }
+                                    rotateLateralidad={rotateLateralidad}
                                 />
                             </span>
                             <span className="text">Sinfonía de una localidad</span>
@@ -70,14 +80,15 @@ export const Header = ({
                     <li className="list">
                         <a href="#" onClick={(e)=>{activeLink(e); setSection('NarracionesBarriales')}}>
                             <span className="icon">
-                                <CanvasComponents 
+                                <CanvasComponents
                                     Content={
-                                        <Cuadro 
+                                        <Cuadro
                                             position={[0,0,0]}
-                                            scale={3} 
+                                            scale={3}
                                         />
                                     }
                                     target={[.7, 0, 0]}
+                                    rotateLateralidad={rotateLateralidad}
                                 />
                             </span>
                             <span className="text">Narraciones barriales</span>

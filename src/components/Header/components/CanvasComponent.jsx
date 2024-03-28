@@ -1,10 +1,11 @@
 import { OrbitControls } from "@react-three/drei"
 import { Canvas } from "@react-three/fiber"
-import { Suspense } from "react"
+import { Suspense, useEffect } from "react"
 
 export const CanvasComponents = ({
     Content,
-    target=[0,0,0]
+    target=[0,0,0],
+    rotateLateralidad
 }) => {
     return (
         <Canvas>
@@ -16,8 +17,10 @@ export const CanvasComponents = ({
                 <directionalLight color="white" position={[0, 0, 2]} />
                 {Content}
                 <OrbitControls
-                    minDistance={3}
-                    maxDistance={7}
+                    autoRotate={true}
+                    autoRotateSpeed={rotateLateralidad}
+                    enableZoom={false}
+                    enableRotate={false}
                     target={target}
                 />
             </Suspense>
