@@ -3,6 +3,15 @@
     &-RyE{
         background-image: url('/img/RostrosYEspacios.png');
     }
+    &-IC{
+        background-image: url('/img/ImagenComparada.png');
+    }
+    &-SL{
+        background-image: url('/img/SinfoniaDeUnaLocalidad.png');
+    }
+}
+p{
+    font-size: 1.3rem;
 } 
 .iframeVideo{
     iframe {
@@ -15,6 +24,37 @@
 
         @include breakPoint($xlarge){
             height: 500px;
+        }
+    }
+}
+
+.SL {
+    .music-player-container{
+        background-size: cover;
+        background: linear-gradient(30deg, rgba(0,0,0,0.65), rgba(0,0,0,0.25));
+        backdrop-filter: blur(10px);
+        height: fit-content;
+        border-radius: 10px;
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.35);
+    }
+    
+    .rhap_container {
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .rhap_time{
+        color: #dddddd !important;
+    }
+
+    .rhap_additional-controls{
+        button {
+            display: none;
         }
     }
 }

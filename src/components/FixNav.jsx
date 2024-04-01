@@ -41,7 +41,7 @@ export const FixNav = () => {
                      </div>
                      <div className="col-9">
                         <span className="fs-4">
-                           Documental interactivo
+                           D.I.
                            Rostros y espacios
                         </span>
                      </div>
@@ -55,7 +55,15 @@ export const FixNav = () => {
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#home" />
                      </svg>
-                     Sobre Aleteo
+                     Sobre nosotros
+                  </a>
+               </li>
+               <li className="nav-item">
+                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} data-bs-toggle="modal" data-bs-target="#sobreNosotros" href="#" className="nav-link text-white" aria-current="page">
+                     <svg className="bi me-2" width="16" height="16">
+                        <use xlinkHref="#home" />
+                     </svg>
+                     Sobre La Chimenea
                   </a>
                </li>
                <li>

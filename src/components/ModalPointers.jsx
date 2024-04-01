@@ -16,7 +16,7 @@ export const ModalPointers = ({
                 show={modalIsOpen} 
                 onHide={handleModalOpen}
                 size="xl"
-                className={classContent}
+                className={`PointerBg ${classContent}`}
             >
                 <Modal.Header closeButton>
                     <Modal.Title>{title}</Modal.Title>

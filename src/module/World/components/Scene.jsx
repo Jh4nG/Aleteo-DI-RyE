@@ -5,8 +5,8 @@ import { TextureLoader } from 'three';
 export function Scene( {section} ) {
 
     const RostrosYEspacios = useLoader(TextureLoader, '/img/RostrosYEspacios.png');
-    const ImagenComparada = useLoader(TextureLoader, '/img/ImagenComparadaSenal.png');
-    const SinforniaDeUnaLocalidad = useLoader(TextureLoader, '/img/SinfoniaDeUnaLocalidadSenal.png');
+    const ImagenComparada = useLoader(TextureLoader, '/img/ImagenComparada.png');
+    const SinforniaDeUnaLocalidad = useLoader(TextureLoader, '/img/SinfoniaDeUnaLocalidad.png');
     const NarracionesBarriales = useLoader(TextureLoader, '/img/RostrosYEspacios.png');
     const [mapTexture, setMapTexture] = useState(RostrosYEspacios);
 

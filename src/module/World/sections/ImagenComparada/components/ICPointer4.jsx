@@ -1,4 +1,7 @@
 import { ModalPointers } from "../../../../../components/ModalPointers"
+import { DescripcionICComponent } from "../../components/DescripcionICComponent"
+import ImgZonaPoa from './../../../../../assets/img/ImagenesComparada/4. Suba Centro - Plaza Fundancional 360.png';
+import ImgZonaPoaAntigua from './../../../../../assets/img/ImagenesComparada/4. Suba Centro - Plaza Fundacnional (Antigua).jpg';
 
 export const ICPointer4 = ( { 
         modalIsOpen,
@@ -7,16 +10,32 @@ export const ICPointer4 = ( {
 
     const Component = ()=> {
         return (
-            <>Content Pointer 4</>
+            <>
+                <DescripcionICComponent 
+                    img360={ImgZonaPoa}
+                    imgAntigua={ImgZonaPoaAntigua}
+                    descriptionNew={<>
+                                        Año: 2024 <br />
+                                        Laura Mora <br />
+                                        Carrera 91 # 145
+                                    </>}
+                    descriptionAntigua={<>
+                                            Año: 1991 <br />
+                                            Guillermo Mora <br />
+                                            Carrera 91 # 145
+                                        </>}
+                />
+            </>
         )
     }
     return (
         <>
             <ModalPointers 
                 modalIsOpen={modalIsOpen}
-                title={'Pointer 4 IC'}
+                title={'Zona Suba Centro - Plaza Fundacional'}
                 Content={Component}
                 handleModalOpen={handleModalOpen}
+                classContent={"PointerBg-IC"}
             />
         </>
     )

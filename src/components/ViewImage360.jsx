@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
-import imgPrueba from '../assets/img/360/BAJO.jpg';
 
-export const ViewImage360Component = () => {
+export const ViewImage360Component = ({
+    img360,
+    imgAntigua
+}) => {
 
     const divisor = useRef(null);
     const handle = useRef(null);
@@ -21,16 +23,21 @@ export const ViewImage360Component = () => {
 
     return (
         <div className="App">
-            <div class="container">
-                <div id="comparison">
-                    <figure>
-                        <div id="handle" ref={handle} style={{ left : `${porcentajeDiv}%` }}></div>
-                        <div id="divisor" ref={divisor} style={{ width : `${porcentajeDiv}%` }}>
-                            <ReactPhotoSphereViewer src={imgPrueba} width="100%" height={'100%'}></ReactPhotoSphereViewer>
-                        </div>
-                    </figure>
-                    <input type="range" min="0" max="100" value={porcentajeDiv} id="slider" ref={slider} onInput={(e)=>{moveDivisor(e)}} />
-                </div>
+            <div id="comparison">
+                <figure style={{
+                    backgroundImage : `url('${imgAntigua}')`
+                }}>
+                    <div id="handle" ref={handle} style={{ left : `${porcentajeDiv}%` }}></div>
+                    <div id="divisor" ref={divisor} style={{ width : `${porcentajeDiv}%` }}>
+                        <ReactPhotoSphereViewer 
+                            src={img360} 
+                            width="100%" 
+                            height={'100%'}
+                            startAutoRotate={true}
+                        ></ReactPhotoSphereViewer>
+                    </div>
+                </figure>
+                <input type="range" min="0" max="100" value={porcentajeDiv} id="slider" ref={slider} onInput={(e)=>{moveDivisor(e)}} />
             </div>
         </div>
     );

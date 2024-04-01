@@ -9,6 +9,7 @@ import { NarracionesBarrialesComponent } from './sections/NarracionesBarriales';
 import { RostrosYEspaciosComponent } from './sections/RostrosYEspacios';
 import { SinforniaDeUnaLocalidadComponent } from './sections/SinforniaDeUnaLocalidad';
 import { Mapa3D } from './components/Mapa3D';
+import { ChincheRojo } from './components/ChincheRojo';
 
 export default function WorldComponent( { section } ) {
 
@@ -95,8 +96,9 @@ export default function WorldComponent( { section } ) {
                     {/* Mapa */}
                     {section == 'NarracionesBarriales' ? (
                         <Mapa3D 
-                            scale={7}
-                            rotation={[1.5,-1.4,0]}
+                            scale={8}
+                            rotation={[1.6,-1.43,0]}
+                            position={[-.2,0,0]}
                         />
                     ) : 
                         <Scene 
@@ -119,14 +121,25 @@ export default function WorldComponent( { section } ) {
                     {/* Chinches */}
                     {pointerActual &&
                         pointerActual.map(({scale, position, rotation, action}, i)=>{
-                            return <Chinche
-                                key={i}
-                                intensity={.5}
-                                scale={scale}
-                                position={position}
-                                rotation={rotation}
-                                onClick={()=>{getInteraction(action)}}
-                            />
+                            if (section == 'ImagenComparada'){
+                                return <ChincheRojo 
+                                    key={i}
+                                    color={"black"}
+                                    scale={scale}
+                                    position={position}
+                                    rotation={rotation}
+                                    onClick={()=>{getInteraction(action)}}
+                                /> 
+                            } else {
+                                return <Chinche
+                                    key={i}
+                                    intensity={.5}
+                                    scale={scale}
+                                    position={position}
+                                    rotation={rotation}
+                                    onClick={()=>{getInteraction(action)}}
+                                />
+                            }
                         })
                     }
                 </Suspense>
