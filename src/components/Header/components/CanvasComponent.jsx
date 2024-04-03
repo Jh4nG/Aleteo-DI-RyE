@@ -22,6 +22,7 @@ export const CanvasComponents = ({
                     enableZoom={false}
                     enableRotate={false}
                     target={target}
+                    enablePan={false}
                 />
             </Suspense>
         </Canvas>

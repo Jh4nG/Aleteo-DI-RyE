@@ -10,9 +10,12 @@ export function Mapa3D(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/components/Mapa3D.gltf')
   const { actions } = useAnimations(animations, group)
+  const getPosition = (e)=> {
+    console.log(e.point);
+  }
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
+      <group name="Scene" onClick={getPosition}>
         <mesh name="Plane" geometry={nodes.Plane.geometry} material={materials['Material.001']} position={[0, -0.005, 0]} scale={[0.366, 1, 0.462]} />
         <mesh name="mapa_suba_corregido" geometry={nodes.mapa_suba_corregido.geometry} material={materials['mapa suba corregido']} position={[0, -0.004, 0]} />
         <mesh name="Plano_Copia" geometry={nodes.Plano_Copia.geometry} material={materials['Material.001']} position={[0, -0.005, 0]} scale={[0.366, 1, 0.462]} />

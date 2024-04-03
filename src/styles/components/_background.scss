@@ -20,6 +20,15 @@
         z-index: 2;
         font-size: 3rem;
     }
+
+    &__franjaRoja{
+        z-index: 1;
+        width: 100%;
+        // height: 4vh;
+        position: fixed;
+        bottom: 0%;
+        background-color: #E5134F;
+    }
 }
 
 @keyframes animation {

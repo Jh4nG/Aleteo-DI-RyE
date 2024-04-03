@@ -10,6 +10,8 @@ import { RostrosYEspaciosComponent } from './sections/RostrosYEspacios';
 import { SinforniaDeUnaLocalidadComponent } from './sections/SinforniaDeUnaLocalidad';
 import { Mapa3D } from './components/Mapa3D';
 import { ChincheRojo } from './components/ChincheRojo';
+import { ChincheAzul } from './components/ChincheAzul';
+import { ChincheVerde } from './components/ChincheVerde';
 
 export default function WorldComponent( { section } ) {
 
@@ -40,6 +42,19 @@ export default function WorldComponent( { section } ) {
         Pointer4 : false,
         Pointer5 : false,
     });
+    const [modalOpenNB, setModalOpenNB] = useState(false);
+    const [statusNB, setStatusNBModal] = useState({ // SinforniaDeUnaLocalidad
+        Pointer1 : false,
+        Pointer2 : false,
+        Pointer3 : false,
+        Pointer4 : false,
+        Pointer5 : false,
+        Pointer6 : false,
+        Pointer7 : false,
+        Pointer8 : false,
+        Pointer9 : false,
+        Pointer10 : false
+    });
     
     const getInteraction = (action) => {
         let tmp = null;
@@ -63,7 +78,10 @@ export default function WorldComponent( { section } ) {
                     setModalOpenSL(true);
                 break;
             case 'NarracionesBarriales':
-
+                    tmp = statusNB;
+                    tmp[action] = true;
+                    setStatusNBModal(tmp);
+                    setModalOpenNB(true);
                 break;
         }
     }
@@ -121,24 +139,43 @@ export default function WorldComponent( { section } ) {
                     {/* Chinches */}
                     {pointerActual &&
                         pointerActual.map(({scale, position, rotation, action}, i)=>{
-                            if (section == 'ImagenComparada'){
-                                return <ChincheRojo 
-                                    key={i}
-                                    color={"black"}
-                                    scale={scale}
-                                    position={position}
-                                    rotation={rotation}
-                                    onClick={()=>{getInteraction(action)}}
-                                /> 
-                            } else {
-                                return <Chinche
-                                    key={i}
-                                    intensity={.5}
-                                    scale={scale}
-                                    position={position}
-                                    rotation={rotation}
-                                    onClick={()=>{getInteraction(action)}}
-                                />
+                            switch(section){
+                                case 'RostrosYEspacios':
+                                    return <Chinche
+                                                key={i}
+                                                intensity={.5}
+                                                scale={scale}
+                                                position={position}
+                                                rotation={rotation}
+                                                onClick={()=>{getInteraction(action)}}
+                                            />
+                                case 'ImagenComparada':
+                                    return <ChincheRojo 
+                                                key={i}
+                                                color={"black"}
+                                                scale={scale}
+                                                position={position}
+                                                rotation={rotation}
+                                                onClick={()=>{getInteraction(action)}}
+                                            />
+                                case 'SinforniaDeUnaLocalidad':
+                                    return <ChincheAzul 
+                                                key={i}
+                                                color={"black"}
+                                                scale={scale}
+                                                position={position}
+                                                rotation={rotation}
+                                                onClick={()=>{getInteraction(action)}}
+                                            />
+                                case 'NarracionesBarriales':
+                                    return <ChincheVerde 
+                                                key={i}
+                                                color={"black"}
+                                                scale={scale}
+                                                position={position}
+                                                rotation={rotation}
+                                                onClick={()=>{getInteraction(action)}}
+                                            />
                             }
                         })
                     }
@@ -167,9 +204,13 @@ export default function WorldComponent( { section } ) {
                     setStatusSLModal={setStatusSLModal}
                 />
             )}
-            {/* {section == 'NarracionesBarriales' && (
-                <NarracionesBarrialesComponent />
-            )} */}
+            {section == 'NarracionesBarriales' && (
+                <NarracionesBarrialesComponent 
+                    statusNB={statusNB}
+                    setModalOpenNB={setModalOpenNB}
+                    setStatusNBModal={setStatusNBModal}
+                />
+            )}
         </>
     )
 }

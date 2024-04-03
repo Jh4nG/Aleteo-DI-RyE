@@ -103,7 +103,68 @@ const PointerChinche = {
             rotation : [1, 6, 4]
         }
     ],
-    'NarracionesBarriales' : []
+    'NarracionesBarriales' : [
+        {
+            scale : 0.08,
+            position : [-1.9983480703743788, -1.0557748916444807, -0.00107450055495379],
+            action : 'Pointer1',
+            rotation : [1.5, 0, 0]
+        },
+        {
+            scale : 0.08,
+            position : [-0.8161732418426897, 1.5409802788896352, -0.00107450055495379],
+            action : 'Pointer2',
+            rotation : [1, 0, 0]
+        },
+        {
+            scale : 0.08,
+            position : [-1.1731685342588996, 0.008520500101998922, -0.00107450055495379],
+            action : 'Pointer3',
+            rotation : [1, 0, 0.2]
+        },
+        {
+            scale : 0.08,
+            position : [-1.2813071322100487, 0.8393165394270937, -0.00107450055495379],
+            action : 'Pointer4',
+            rotation : [1, 0.7, 0.3]
+        },
+        {
+            scale : 0.08,
+            position : [-2.974145075282627, -0.4526986012609855, -0.00107450055495379],
+            action : 'Pointer5',
+            rotation : [1.2, 0.5, 0.3]
+        },
+        {
+            scale : 0.08,
+            position : [-1.5049355248704936, -0.20165639053939674, -0.00107450055495379],
+            action : 'Pointer6',
+            rotation : [1.2, 0, 0]
+        },
+        {
+            scale : 0.08,
+            position : [-1.568588796265106, -0.8206751002205416, -0.00107450055495379],
+            action : 'Pointer7',
+            rotation : [1.5, 0, 0]
+        },
+        {
+            scale : 0.08,
+            position : [-1.01270856124694, 0.6342192705255976, -0.00107450055495379],
+            action : 'Pointer8',
+            rotation : [1.5, 0, -0.6]
+        },
+        {
+            scale : 0.08,
+            position : [-0.29969412138793056, -0.8910781786434425, -0.00107450055495379],
+            action : 'Pointer9',
+            rotation : [1.5, 0, -0.6]
+        },
+        {
+            scale : 0.08,
+            position : [-0.4436542288789873, 0.6238316264591451, -0.00107450055495379],
+            action : 'Pointer10',
+            rotation : [1.5, 0, -0.6]
+        }
+    ]
 }
 export {
     PointerChinche

@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaAngleDoubleLeft, FaFacebookF, FaInstagram, FaRegWindowClose } from "react-icons/fa";
-import { ModalPrincipal } from "./ModalPrincipal";
+import { ModalNav } from "./ModalNav";
 
 export const FixNav = () => {
    const [flatOpenSide, setFlatOpenSide] = useState(false);
    const [modalOpen, setModalOpen] = useState(false);
+   const [navSelected, setNavSelected] = useState('');
 
    const showSideBar = (action) => {
       if (action) {
@@ -14,18 +15,20 @@ export const FixNav = () => {
       }
    }
 
-   const handleModalOpen = ()=> {
+   const handleModalOpen = (nav) => {
+      setNavSelected(nav);
       setModalOpen(!modalOpen);
    }
 
    return (
       <>
-         <ModalPrincipal 
+         <ModalNav 
+            nav={navSelected}
             modalIsOpen={modalOpen}
             handleModalOpen={handleModalOpen}
          />
          <div className={`display-menu ${flatOpenSide && 'd-none'}`}>
-            <button type="button" className="btn btn-dark" onClick={()=>{showSideBar(true)}}>
+            <button type="button" className="btn btn-fixNav" onClick={()=>{showSideBar(true)}}>
                <FaAngleDoubleLeft />
             </button>
          </div>
@@ -51,7 +54,7 @@ export const FixNav = () => {
             <hr />
             <ul className="nav nav-pills flex-column mb-auto">
                <li className="nav-item">
-                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} data-bs-toggle="modal" data-bs-target="#sobreNosotros" href="#" className="nav-link text-white" aria-current="page">
+                  <a onClick={()=>{handleModalOpen('SobreNosotros');showSideBar(false)}} data-bs-toggle="modal" data-bs-target="#sobreNosotros" href="#" className="nav-link text-white" aria-current="page">
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#home" />
                      </svg>
@@ -59,7 +62,7 @@ export const FixNav = () => {
                   </a>
                </li>
                <li className="nav-item">
-                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} data-bs-toggle="modal" data-bs-target="#sobreNosotros" href="#" className="nav-link text-white" aria-current="page">
+                  <a onClick={()=>{handleModalOpen('SobreChimenea');showSideBar(false)}} data-bs-toggle="modal" data-bs-target="#sobreNosotros" href="#" className="nav-link text-white" aria-current="page">
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#home" />
                      </svg>
@@ -67,7 +70,7 @@ export const FixNav = () => {
                   </a>
                </li>
                <li>
-                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#CreditosModal" className="nav-link text-white">
+                  <a onClick={()=>{handleModalOpen('Creditos');showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#CreditosModal" className="nav-link text-white">
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#speedometer2" />
                      </svg>
@@ -75,7 +78,7 @@ export const FixNav = () => {
                   </a>
                </li>
                <li>
-                  <a onClick={()=>{handleModalOpen();showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#ContactenosModal" className="nav-link text-white">
+                  <a onClick={()=>{handleModalOpen('Contactenos');showSideBar(false)}} href="#" data-bs-toggle="modal" data-bs-target="#ContactenosModal" className="nav-link text-white">
                      <svg className="bi me-2" width="16" height="16">
                         <use xlinkHref="#table" />
                      </svg>

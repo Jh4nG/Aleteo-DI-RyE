@@ -11,6 +11,7 @@
 	-webkit-transition: all 0.5s ease 0s;
 
     &__content{
+		background-color: rgba(141, 141, 141, .3);
         width: 280px;
     }
 
@@ -23,6 +24,27 @@
 	i {
 		font-size: 25px;
 	}
+
+}
+.btn-fixNav{
+	background-color: rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(0, 0, 0, 1) !important;
+	svg {
+		padding-top: 0px !important;
+		& path{
+			fill: black;
+		}
+	}
+	&:hover{
+		background-color: rgba(255, 255, 255, 0.8) !important;
+		svg {
+			padding-top: 0px !important;
+			& path{
+				fill: black;
+			}
+		}
+	}
+
 }
 
 .display-menu {
