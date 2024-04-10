@@ -3,7 +3,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function ChincheRojo(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/components/ChincheRojo.gltf')
+  const { nodes, materials, animations } = useGLTF('/components/ChincheColors/ChincheRojo.gltf')
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -15,4 +15,4 @@ export function ChincheRojo(props) {
   )
 }
 
-useGLTF.preload('/components/ChincheRojo.gltf')
+useGLTF.preload('/components/ChincheColors/ChincheRojo.gltf')

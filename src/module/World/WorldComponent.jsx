@@ -1,7 +1,6 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Environment, OrbitControls, useEnvironment } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { Chinche } from './components/Chinche';
 import { Scene } from './components/Scene';
 import { PointerChinche } from '../../resource/chinchePoints';
 import { ImagenComparadaComponent } from './sections/ImagenComparada';
@@ -12,6 +11,7 @@ import { Mapa3D } from './components/Mapa3D';
 import { ChincheRojo } from './components/ChincheRojo';
 import { ChincheAzul } from './components/ChincheAzul';
 import { ChincheVerde } from './components/ChincheVerde';
+import { ChincheMadera } from './components/ChincheMadera';
 
 export default function WorldComponent( { section } ) {
 
@@ -94,11 +94,11 @@ export default function WorldComponent( { section } ) {
                 setPointerActual(PointerChinche[section]);
             },500);
             setRotateWorld(false);
-        },800);
+        },590);
     }
 
     useEffect(()=>{
-        animationRotate()
+        animationRotate();
         setPointerActual(PointerChinche[section]);
     },[section])
 
@@ -127,7 +127,7 @@ export default function WorldComponent( { section } ) {
                     <directionalLight color="white" position={[0, 0, 2]} />
                     {/* Control de Mapa */}
                     <OrbitControls
-                        // autoRotate={rotateWorld}
+                        autoRotate={rotateWorld}
                         autoRotateSpeed={100}
                         minDistance={(section == 'NarracionesBarriales') ? 1 : 3}
                         maxDistance={7}
@@ -141,7 +141,7 @@ export default function WorldComponent( { section } ) {
                         pointerActual.map(({scale, position, rotation, action}, i)=>{
                             switch(section){
                                 case 'RostrosYEspacios':
-                                    return <Chinche
+                                    return <ChincheMadera
                                                 key={i}
                                                 intensity={.5}
                                                 scale={scale}

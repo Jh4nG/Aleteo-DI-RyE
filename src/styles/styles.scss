@@ -37,6 +37,8 @@ $xxxlarge: 1500px;
 @import "./components/fixNav";
 @import "./components/compareImage";
 @import "./components/PointerContent";
+@import "./components/loader";
+@import "./components/modal";
 
 
 *{
@@ -59,4 +61,8 @@ $xxxlarge: 1500px;
 
 .modal-content{
     background-color: rgba(255, 255, 255, .6) !important;
+}
+
+.react-tooltip {
+    z-index: 100 !important;
 }

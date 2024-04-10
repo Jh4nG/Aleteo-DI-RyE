@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import { CanvasComponents } from './components/CanvasComponent';
-import { Cassete } from './components/Casette';
 import { Cuadro } from './components/Cuadro';
 import { MapaSilueta } from './components/MapaSilueta';
-import { CameraComponent } from './components/Camera';
+import { CassettePlayer } from './components/CassettePlayer';
+import { Camera01 } from './components/Camera01';
 export const Header = ({
+    section,
+    titleNav,
     setSection,
-    titleNav
+    startMoveIcons
 }) => {
 
-    const [rotateLateralidad, setRotateLateralidad] = useState(1);
+    const [rotateLateralidad, setRotateLateralidad] = useState(0);
 
     const activeLink = (e) => {
         const list = document.querySelectorAll('.list');
@@ -20,10 +22,12 @@ export const Header = ({
     }
 
     useEffect(()=>{
-        setTimeout(()=>{
-            setRotateLateralidad(rotateLateralidad == 1 ? -1 : 1)
-        },10000)
-    },[rotateLateralidad]);
+        if(!startMoveIcons){
+            setTimeout(()=>{
+                setRotateLateralidad(rotateLateralidad == 1 || rotateLateralidad == 0 ? -1 : 1)
+            },10000)
+        }
+    },[startMoveIcons,rotateLateralidad]);
 
     return (
         <>
@@ -35,8 +39,8 @@ export const Header = ({
                                 <CanvasComponents
                                     Content={
                                         <MapaSilueta
-                                            position={[2.1,1,1]}
-                                            rotation={[1.5,-1.4,0]}
+                                            position={[2,1,1]}
+                                            rotation={[1.7,-1.35,0]}
                                             scale={2.3}
                                         />
                                     }
@@ -45,7 +49,7 @@ export const Header = ({
                                 />
                             </span>
                             <span className="text">{titleNav}</span>
-                            <span className="circle"></span>
+                            <span className={`circle circle__${section}`}></span>
                         </a>
                     </li>
                     <li className="list">
@@ -53,16 +57,17 @@ export const Header = ({
                             <span className="icon">
                                 <CanvasComponents
                                     Content={
-                                        <CameraComponent
+                                        <Camera01 
                                             scale={12}
                                             position={[0,-.5,0]}
+                                            rotation={[0,0.5,0]}
                                         />
                                     }
                                     rotateLateralidad={rotateLateralidad}
                                 />
                             </span>
                             <span className="text">{titleNav}</span>
-                            <span className="circle"></span>
+                            <span className={`circle circle__${section}`}></span>
                         </a>
                     </li>
                     <li className="list">
@@ -70,13 +75,20 @@ export const Header = ({
                             <span className="icon">
                                 <CanvasComponents
                                     Content={
-                                        <Cassete scale={0.5} />
+                                        <CassettePlayer 
+                                            scale={8} 
+                                            rotation={[0,0.5,0]}
+                                        />
+                                        // <Cassete 
+                                        //     scale={0.5} 
+                                        //     rotation={[0,0.2,0]}
+                                        // />
                                     }
                                     rotateLateralidad={rotateLateralidad}
                                 />
                             </span>
                             <span className="text">{titleNav}</span>
-                            <span className="circle"></span>
+                            <span className={`circle circle__${section}`}></span>
                         </a>
                     </li>
                     <li className="list">
@@ -87,6 +99,7 @@ export const Header = ({
                                         <Cuadro
                                             position={[0,0,0]}
                                             scale={3}
+                                            rotation={[0,0.5,0]}
                                         />
                                     }
                                     target={[.7, 0, 0]}
@@ -94,10 +107,9 @@ export const Header = ({
                                 />
                             </span>
                             <span className="text">{titleNav}</span>
-                            <span className="circle"></span>
+                            <span className={`circle circle__${section}`}></span>
                         </a>
                     </li>
-                    <div className={`indicator`}></div>
                 </ul>
             </div>
         </>

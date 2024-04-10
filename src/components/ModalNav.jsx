@@ -1,6 +1,8 @@
 import Modal from 'react-bootstrap/Modal';
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
+import imgLaChimenea from '../assets/img/Logos/ChimenaCultural.png';
+import imgTresOlas from '../assets/img/Logos/LogoTresOlas.png';
 
 export const ModalNav = ({ 
     modalIsOpen,
@@ -39,6 +41,9 @@ export const ModalNav = ({
             case 'SobreChimenea':
                 return <>
                     <p>La Chimenea Cultural es una corporación sin ánimo de lucro que proviene de un proceso de Cineclub de la localidad de Suba en Bogotá (Colombia), llamado Cineclub La Chimenea, que fue reactivado en el año 2010 el cual realizó proyecciones semanales hasta el año 2017 en diferentes espacios culturales. Ahora desarrolla proyectos creativos en donde se destacan las narrativas interactivas, sobre todo el proyecto de ciencia ficción Aleteo-transmedia, además, desarrolla proyectos de formación, participación en eventos académicos, artísticos y culturales.</p>
+                    <div className="col-12 text-center">
+                        <img src={imgLaChimenea} width="40%" />
+                    </div>
                 </>;
             case 'Creditos':
                 return <>
@@ -91,6 +96,10 @@ export const ModalNav = ({
                         <p>Biblioteca Francisco José de Caldas</p>
                         <p>Biblioteca Julio Mario Santo Domingo</p>
                         <p>Casa de juventud Diego Felipe Becerra</p>
+                        <div className="col-12">
+                            <img src={imgLaChimenea} width="40%" />
+                            <img src={imgTresOlas} width="30%" />
+                        </div>
                     </div>
                 </>;
             case 'Contactenos':

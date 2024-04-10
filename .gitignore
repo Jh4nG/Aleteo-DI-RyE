@@ -26,6 +26,19 @@ dist-ssr
 # Se omiten los gltf
 *.gltf
 *.glb
+*.bin
 
 # Fuentes 
 *.ttf
+
+#Carpetas texturas
+textures
+
+#Image
+*.webp
+*.png
+*.jpg
+*.gif
+
+#Audio
+*.mp3

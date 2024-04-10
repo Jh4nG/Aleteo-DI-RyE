@@ -94,13 +94,18 @@ export const FixNav = () => {
                </a>
                <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                   <li>
-                     <a className="dropdown-item" target="_blank" href="https://www.facebook.com/aleteotransmedia">
-                        <FaFacebookF /> Facebook
+                     <a className="dropdown-item" target="_blank" href="https://www.facebook.com/lachimeneacultural">
+                        <FaFacebookF /> La chimenea cultural
                      </a>
                   </li>
                   <li>
-                     <a className="dropdown-item" target="_blank" href="https://www.instagram.com/aleteo_transmedia/">
-                        <FaInstagram /> Instagram
+                     <a className="dropdown-item" target="_blank" href="https://www.instagram.com/la_chimenea_cultural/">
+                        <FaInstagram /> La Chimenea cultural
+                     </a>
+                  </li>
+                  <li>
+                     <a className="dropdown-item" target="_blank" href="https://www.instagram.com/di_rostros_y_espacios/">
+                        <FaInstagram /> D.I. Rostros y espacios
                      </a>
                   </li>
                </ul>

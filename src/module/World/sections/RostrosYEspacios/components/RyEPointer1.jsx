@@ -10,7 +10,7 @@ export const RyEPointer1 = ( {
     const Component = ()=> {
         return (
             <DescripcionRyEComponent 
-                iframe={<iframe src="https://www.youtube.com/embed/uOV--H42sMU?si=KGdoEm-rLYLllvWw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>}
+                iframe={<iframe src="https://www.youtube.com/embed/uOV--H42sMU?si=KGdoEm-rLYLllvWw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>}
                 description={
                     <>
                         <p>

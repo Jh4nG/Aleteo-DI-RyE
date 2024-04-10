@@ -29,6 +29,14 @@
         bottom: 0%;
         background-color: #E5134F;
     }
+
+    .BIA {
+        display: block;
+        position: fixed;
+        bottom: 8%;
+        left: 0%;
+        z-index: 1000;
+    }
 }
 
 @keyframes animation {
