@@ -11,14 +11,29 @@
 	-webkit-transition: all 0.5s ease 0s;
 
     &__content{
-		background-color: rgba(141, 141, 141, .3);
         width: 280px;
+		background-color: rgba(141, 141, 141, 1);
+		@include breakPoint($medium){
+			background-color: rgba(141, 141, 141, 0.3) !important;
+		}
     }
 
 	&--close {
 		-webkit-transform: translate(82vw, 0px);
-		transform: translate(82vw, 0px);
+		transform: translate(25vw, 0px);
 		visibility: visible;
+
+		@include breakPoint($small){
+			transform: translate(65vw, 0px);
+		}
+
+		@include breakPoint($medium){
+			transform: translate(70vw, 0px);
+		}
+
+		@include breakPoint($large){
+			transform: translate(82vw, 0px);
+		}
 	}
 
 	i {

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Header } from "../components/Header";
 import { FixNav } from "../components/FixNav";
 import { Loader } from '@react-three/drei';
@@ -8,26 +8,41 @@ import logoChimenea from './../assets/img/Logos/1. Logo Chimenea.png';
 import logoInstitucion from './../assets/img/Logos/2.Institucion.png';
 import { BiaComponents } from "../components/BiaComponent";
 import { AudioComponent } from "../components/AudioComponent/AudioComponent";
+import { addLogs } from "../services/useLog";
 
 export const Background = () => {
 
     const [section, setSection] = useState('RostrosYEspacios');
     const [titleNav, setTitleNav] = useState('Rostros y espacios');
     const [openLoader, setOpenLoader] = useState(true);
-    const [statusPlay, setStatusPlay] = useState(false);    
+    const [statusPlay, setStatusPlay] = useState(0);
+    const [statusGlobalAudio, setStatusGlobalAudio] = useState(true);
 
+    const init = ()=>{
+        addLogs(titleNav);
+    }
+    
     const handleSection = (section,title) => {
         setSection(section);
         setTitleNav(title);
+        addLogs(title);
     }
 
     const handleSetOpenLoader = (status) => {
         setOpenLoader(status);
     }
 
+    const handleStatusGlobalAudio = (status)=>{
+        setStatusGlobalAudio(status)
+    }
+
     const handleStatusPlay = (status)=> {
         setStatusPlay(status);
     }
+
+    useEffect(()=>{
+        init();
+    },[]);
 
     return (
         <div className={`bg`}>
@@ -68,10 +83,14 @@ export const Background = () => {
             />
             <WorldComponent 
                 section={section}
+                statusGlobalAudio={statusGlobalAudio}
+                handleStatusPlay={handleStatusPlay}
             />
 
             <AudioComponent 
                 statusPlay={statusPlay}
+                handleStatusPlay={handleStatusPlay}
+                handleStatusGlobalAudio={handleStatusGlobalAudio}
             />
         </div>
     )

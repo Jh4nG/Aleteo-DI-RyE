@@ -7,7 +7,9 @@ import { ICPointer5 } from "./components/ICPointer5";
 export const ImagenComparadaComponent = ({
     statusIC,
     setModalOpenIC,
-    setStatusICModal
+    setStatusICModal,
+    statusGlobalAudio,
+    handleStatusPlay 
 }) => {
 
     const handleModalOpen = (action) => {
@@ -15,6 +17,9 @@ export const ImagenComparadaComponent = ({
         tmp[action] = false;
         setStatusICModal(tmp);
         setModalOpenIC(false);
+        if(statusGlobalAudio){
+            handleStatusPlay(true);
+        }
     }
 
     return (

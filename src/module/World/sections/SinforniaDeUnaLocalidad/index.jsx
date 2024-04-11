@@ -7,7 +7,9 @@ import { SLPointer5 } from "./components/SLPointer5";
 export const SinforniaDeUnaLocalidadComponent = ({
     statusSL,
     setModalOpenSL,
-    setStatusSLModal
+    setStatusSLModal,
+    statusGlobalAudio,
+    handleStatusPlay 
 }) => {
 
     const handleModalOpen = (action) => {
@@ -15,6 +17,9 @@ export const SinforniaDeUnaLocalidadComponent = ({
         tmp[action] = false;
         setStatusSLModal(tmp);
         setModalOpenSL(false);
+        if(statusGlobalAudio){
+            handleStatusPlay(true);
+        }
     }
 
     return (

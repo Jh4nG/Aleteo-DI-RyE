@@ -124,4 +124,56 @@
             transform: translateX(calc(144.2px * 3));
         }
     }
+
+    &-display-menu {
+        left: 1%;
+        top: 2%;
+        position: fixed;
+        z-index: 999;
+    
+        &--fixed-top {
+            position: fixed;
+            top: 2%;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    &-fix-nav {
+        position: fixed;
+        width: 256px;
+        height: 100%;
+        z-index: 9999 !important;
+    
+        -webkit-transform: translate(-100vw, 0px);
+        transform: translate(-100vw, 0px);
+        visibility: visible;
+        transition: all 0.5s ease 0s;
+        -webkit-transition: all 0.5s ease 0s;
+    
+        &__content{
+            width: 280px;
+            background-color: rgba(141, 141, 141, 1);
+            @include breakPoint($medium){
+                background-color: rgba(141, 141, 141, 0.3) !important;
+            }
+        }
+    
+        &--close {
+            -webkit-transform: translate(0vw, 0px);
+            transform: translate(0vw, 0px);
+            visibility: visible;
+        }
+    
+        i {
+            font-size: 25px;
+        }
+    }
+}
+
+.nav-item-a{
+    text-decoration: none;
+}
+.nav-item-text {
+    color: white;
 }

@@ -12,7 +12,9 @@ import { NBPointer9 } from "./components/NBPointer9";
 export const NarracionesBarrialesComponent = ({
     statusNB,
     setModalOpenNB,
-    setStatusNBModal
+    setStatusNBModal,
+    statusGlobalAudio,
+    handleStatusPlay 
 }) => {
 
     const handleModalOpen = (action) => {
@@ -20,6 +22,9 @@ export const NarracionesBarrialesComponent = ({
         tmp[action] = false;
         setStatusNBModal(tmp);
         setModalOpenNB(false);
+        if(statusGlobalAudio){
+            handleStatusPlay(true);
+        }
     }
 
     return (

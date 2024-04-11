@@ -1,0 +1,19 @@
+.audioAmbiente{
+    audio {
+        display: none;
+    }
+
+    &-icon{
+        right: 1%;
+        bottom: 8%;
+        display: block;
+        position: fixed;
+        z-index: 1000;
+        
+        button.btn-iconAudio{
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.3) !important;
+            border-color: rgb(0, 0, 0) !important;
+        }
+    }
+}

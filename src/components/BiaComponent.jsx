@@ -18,7 +18,7 @@ export const BiaComponents = ()=> {
             {/* BIA - Museo Interactivo */}
             <div id="bia-tooltip" className="BIA">
                 <a href="http://museointeractivoaleteo.com/" target="_blank">
-                    <img src={imgBia}  width={100}/>
+                    <img src={imgBia}/>
                 </a>
             </div>
             <Tooltip ref={tooltipBia} anchorSelect="#bia-tooltip" place="top">Museo Interactivo</Tooltip>

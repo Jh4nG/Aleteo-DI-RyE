@@ -13,7 +13,11 @@ import { ChincheAzul } from './components/ChincheAzul';
 import { ChincheVerde } from './components/ChincheVerde';
 import { ChincheMadera } from './components/ChincheMadera';
 
-export default function WorldComponent( { section } ) {
+export default function WorldComponent( { 
+    section,
+    statusGlobalAudio,
+    handleStatusPlay 
+} ) {
 
     const envMap = useEnvironment({files : '/img/Background.hdr'});
     const [rotateWorld, setRotateWorld] = useState(false);
@@ -58,6 +62,9 @@ export default function WorldComponent( { section } ) {
     
     const getInteraction = (action) => {
         let tmp = null;
+        if(statusGlobalAudio){
+            handleStatusPlay(false);
+        }
         switch(section){
             case 'RostrosYEspacios':
                     tmp = statusRyE;
@@ -188,6 +195,8 @@ export default function WorldComponent( { section } ) {
                     statusRyE={statusRyE}
                     setModalOpenRyE={setModalOpenRyE}
                     setStatusRyEModal={setStatusRyEModal}
+                    statusGlobalAudio={statusGlobalAudio}
+                    handleStatusPlay={handleStatusPlay}
                 />
             )}
             {section == 'ImagenComparada' && (
@@ -195,6 +204,8 @@ export default function WorldComponent( { section } ) {
                     statusIC={statusIC}
                     setModalOpenIC={setModalOpenIC}
                     setStatusICModal={setStatusICModal}
+                    statusGlobalAudio={statusGlobalAudio}
+                    handleStatusPlay={handleStatusPlay}
                 />
             )}
             {section == 'SinforniaDeUnaLocalidad' && (
@@ -202,6 +213,8 @@ export default function WorldComponent( { section } ) {
                     statusSL={statusSL}
                     setModalOpenSL={setModalOpenSL}
                     setStatusSLModal={setStatusSLModal}
+                    statusGlobalAudio={statusGlobalAudio}
+                    handleStatusPlay={handleStatusPlay}
                 />
             )}
             {section == 'NarracionesBarriales' && (
@@ -209,6 +222,8 @@ export default function WorldComponent( { section } ) {
                     statusNB={statusNB}
                     setModalOpenNB={setModalOpenNB}
                     setStatusNBModal={setStatusNBModal}
+                    statusGlobalAudio={statusGlobalAudio}
+                    handleStatusPlay={handleStatusPlay}
                 />
             )}
         </>

@@ -13,12 +13,31 @@
         color: white;
         position: fixed;
         z-index: 2;
-        font-size: 4rem;
+        font-size: 1.5rem;
+        left: 20%;
+
+        @include breakPoint($medium){
+            font-size: 2rem;
+            left: 0%;
+        }
+
+        @include breakPoint($large){
+            font-size: 4rem;
+            left: 0%;
+        }
     }
     &__subTitle{
         position: fixed;
         z-index: 2;
-        font-size: 3rem;
+        font-size: 1rem;
+
+        @include breakPoint($medium){
+            font-size: 1.5rem;
+        }
+
+        @include breakPoint($large){
+            font-size: 3rem;
+        }
     }
 
     &__franjaRoja{
@@ -36,6 +55,18 @@
         bottom: 8%;
         left: 0%;
         z-index: 1000;
+
+        a > img {
+            width: 50px;
+
+            @include breakPoint($medium){
+                width: 80px;
+            }
+
+            @include breakPoint($large){
+                width: 100px;
+            }
+        }
     }
 }
 

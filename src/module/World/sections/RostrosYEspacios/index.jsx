@@ -7,7 +7,9 @@ import { RyEPointer5 } from "./components/RyEPointer5";
 export const RostrosYEspaciosComponent = ({
     statusRyE,
     setModalOpenRyE,
-    setStatusRyEModal
+    setStatusRyEModal,
+    statusGlobalAudio,
+    handleStatusPlay 
 }) => {
 
     const handleModalOpen = (action) => {
@@ -15,6 +17,9 @@ export const RostrosYEspaciosComponent = ({
         tmp[action] = false;
         setStatusRyEModal(tmp);
         setModalOpenRyE(false);
+        if(statusGlobalAudio){
+            handleStatusPlay(true);
+        }
     }
 
     return (
