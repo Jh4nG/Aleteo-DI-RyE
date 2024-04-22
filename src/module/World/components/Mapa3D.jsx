@@ -16,4 +16,4 @@ export function Mapa3D(props) {
   )
 }
 
-useGLTF.preload('/components/Mapa3D.gltf')
+// useGLTF.preload('/components/Mapa3D.gltf')

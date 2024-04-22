@@ -1,6 +1,7 @@
 export const DescripcionNBComponent = ({
     iframe,
-    description
+    description,
+    addApoyo
 })=> {
     return (
         <div className="container">
@@ -12,6 +13,7 @@ export const DescripcionNBComponent = ({
                 <p>
                     <strong> Con el apoyo de: </strong> <br />
                     La Chimenea Cultural
+                    {addApoyo}
                 </p>
             </div>
         </div>

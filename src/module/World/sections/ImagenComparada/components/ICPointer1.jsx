@@ -1,7 +1,7 @@
 import { ModalPointers } from "../../../../../components/ModalPointers"
 import { DescripcionICComponent } from "../../components/DescripcionICComponent"
-import ImgZonaPoa from './../../../../../assets/img/ImagenesComparada/1. Zona Poa 360.png';
-import ImgZonaPoaAntigua from './../../../../../assets/img/ImagenesComparada/1. Zona Poa (Antigua).jpg';
+import ImgZonaPoa from './../../../../../assets/img/ImagenesComparada/1. Zona Poa 360.webp';
+import ImgZonaPoaAntigua from './../../../../../assets/img/ImagenesComparada/1. Zona Poa (Antigua).webp';
 
 export const ICPointer1 = ( { 
         modalIsOpen,

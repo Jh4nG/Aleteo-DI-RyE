@@ -4,10 +4,9 @@ import { TextureLoader } from 'three';
 
 export function Scene( {section} ) {
 
-    const RostrosYEspacios = useLoader(TextureLoader, '/img/RostrosYEspacios.png');
-    const ImagenComparada = useLoader(TextureLoader, '/img/ImagenComparada.png');
-    const SinforniaDeUnaLocalidad = useLoader(TextureLoader, '/img/SinfoniaDeUnaLocalidad.png');
-    const NarracionesBarriales = useLoader(TextureLoader, '/img/RostrosYEspacios.png');
+    const RostrosYEspacios = useLoader(TextureLoader, '/img/RostrosYEspacios.webp');
+    const ImagenComparada = useLoader(TextureLoader, '/img/ImagenComparada.webp');
+    const SinforniaDeUnaLocalidad = useLoader(TextureLoader, '/img/SinfoniaDeUnaLocalidad.webp');
     const [mapTexture, setMapTexture] = useState(RostrosYEspacios);
 
     const getPosition = (e)=> {
@@ -25,9 +24,6 @@ export function Scene( {section} ) {
                 break;
             case 'SinforniaDeUnaLocalidad':
                 imgTmp = SinforniaDeUnaLocalidad;
-                break;
-            case 'NarracionesBarriales':
-                imgTmp = NarracionesBarriales;
                 break;
             default:
                 imgTmp = RostrosYEspacios;

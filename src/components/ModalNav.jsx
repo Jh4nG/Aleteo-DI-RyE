@@ -1,8 +1,8 @@
 import Modal from 'react-bootstrap/Modal';
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa";
-import imgLaChimenea from '../assets/img/Logos/ChimenaCultural.png';
-import imgTresOlas from '../assets/img/Logos/LogoTresOlas.png';
+import imgLaChimenea from '../assets/img/Logos/ChimenaCultural.webp';
+import imgTresOlas from '../assets/img/Logos/LogoTresOlas.webp';
 
 export const ModalNav = ({ 
     modalIsOpen,
@@ -93,8 +93,8 @@ export const ModalNav = ({
                         <p>La Oferta Radio</p>
                         <p>Sobibor</p>
                         <p>Casa de la Memoria de Suba</p>
-                        <p>Biblioteca Francisco José de Caldas</p>
-                        <p>Biblioteca Julio Mario Santo Domingo</p>
+                        <p>Biblioteca Amigos de la Naturaleza</p>
+                        <p>Eiliv - Bar</p>
                         <p>Casa de juventud Diego Felipe Becerra</p>
                         <div className="col-12">
                             <img src={imgLaChimenea} width="40%" />

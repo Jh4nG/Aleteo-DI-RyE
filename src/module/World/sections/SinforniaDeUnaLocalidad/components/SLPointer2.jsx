@@ -1,7 +1,7 @@
 import { ModalPointers } from "../../../../../components/ModalPointers"
 import { DescripcionSLComponent } from "../../components/DescripcionSLComponent"
 import AudioMp3 from './../../../../../assets/img/SinforniaDeUnaLocalidad/2. Parque Fontanar de río.mp3';
-import ImgAudio from './../../../../../assets/img/SinforniaDeUnaLocalidad/2. Parque Fontanar del Río.png';
+import ImgAudio from './../../../../../assets/img/SinforniaDeUnaLocalidad/2. Parque Fontanar del Río.webp';
 
 export const SLPointer2 = ( { 
         modalIsOpen,

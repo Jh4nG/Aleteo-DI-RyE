@@ -1,7 +1,7 @@
 import { ModalPointers } from "../../../../../components/ModalPointers"
 import { DescripcionSLComponent } from "../../components/DescripcionSLComponent"
 import AudioMp3 from './../../../../../assets/img/SinforniaDeUnaLocalidad/3. Zona Guaymaral - Suba.mp3';
-import ImgAudio from './../../../../../assets/img/SinforniaDeUnaLocalidad/3. Zona Guaymaral.png';
+import ImgAudio from './../../../../../assets/img/SinforniaDeUnaLocalidad/3. Zona Guaymaral.webp';
 
 export const SLPointer3 = ( { 
         modalIsOpen,

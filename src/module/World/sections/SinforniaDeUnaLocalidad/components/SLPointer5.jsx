@@ -1,7 +1,7 @@
 import { ModalPointers } from "../../../../../components/ModalPointers"
 import { DescripcionSLComponent } from "../../components/DescripcionSLComponent"
 import AudioMp3 from './../../../../../assets/img/SinforniaDeUnaLocalidad/5. Humedal Córdoba - Niza.mp3';
-import ImgAudio from './../../../../../assets/img/SinforniaDeUnaLocalidad/5. Humedal Córdoba - Niza.png';
+import ImgAudio from './../../../../../assets/img/SinforniaDeUnaLocalidad/5. Humedal Córdoba - Niza.webp';
 
 export const SLPointer5 = ( { 
         modalIsOpen,

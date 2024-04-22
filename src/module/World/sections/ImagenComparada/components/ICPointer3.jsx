@@ -1,7 +1,7 @@
 import { ModalPointers } from "../../../../../components/ModalPointers"
 import { DescripcionICComponent } from "../../components/DescripcionICComponent"
-import ImgZonaPoa from './../../../../../assets/img/ImagenesComparada/3. Zona Suba Turingia 360.png';
-import ImgZonaPoaAntigua from './../../../../../assets/img/ImagenesComparada/3. Zona Suba Tiringia (Aintigua).jpg';
+import ImgZonaPoa from './../../../../../assets/img/ImagenesComparada/3. Zona Suba Turingia 360.webp';
+import ImgZonaPoaAntigua from './../../../../../assets/img/ImagenesComparada/3. Zona Suba Tiringia (Aintigua).webp';
 
 export const ICPointer3 = ( { 
         modalIsOpen,

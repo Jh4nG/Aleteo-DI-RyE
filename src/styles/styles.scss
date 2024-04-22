@@ -1,27 +1,7 @@
-// @font-face {
-//     font-family: 'fontRyE';
-//     src: url('./../assets/fonts/brankovic.ttf');
-// }
-
 @font-face {
     font-family: 'fontRyE';
     src: url('./../assets/fonts/erasdust.ttf');
 }
-
-// @font-face {
-//     font-family: 'fontRyE';
-//     src: url('./../assets/fonts/KingthingsTrypewriter2.ttf');
-// }
-
-// @font-face {
-//     font-family: 'fontRyE';
-//     src: url('./../assets/fonts/zai_CourierPolski1941_i.ttf');
-// }
-
-// @font-face {
-//     font-family: 'fontRyE';
-//     src: url('./../assets/fonts/zai_CourierPolski1941.ttf');
-// }
 
 /*########## BREAKPOINT ##########*/
 $small: 576px;
@@ -44,10 +24,6 @@ $xxxlarge: 1500px;
 
 *{
     font-family: 'fontRyE' !important;
-}
-
-#root{
-    cursor: url('/puntero.png'), auto !important;
 }
 
 .viewer {

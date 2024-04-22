@@ -4,8 +4,8 @@ import { FixNav } from "../components/FixNav";
 import { Loader } from '@react-three/drei';
 import { LoaderApp } from "../components/Loader/LoaderApp";
 import WorldComponent from "./World/WorldComponent";
-import logoChimenea from './../assets/img/Logos/1. Logo Chimenea.png';
-import logoInstitucion from './../assets/img/Logos/2.Institucion.png';
+import logoChimenea from './../assets/img/Logos/1. Logo Chimenea.webp';
+import logoInstitucion from './../assets/img/Logos/2.Institucion.webp';
 import { BiaComponents } from "../components/BiaComponent";
 import { AudioComponent } from "../components/AudioComponent/AudioComponent";
 import { addLogs } from "../services/useLog";
@@ -50,10 +50,22 @@ export const Background = () => {
             <Loader 
                 barStyles={false}
                 dataInterpolation={(p) => {
-                        (p == '100') && handleSetOpenLoader(false); handleStatusPlay(true);
+                        if(p == '100') {
+                            handleSetOpenLoader(false); 
+                            handleStatusPlay(true);
+                        }else{
+                            (!openLoader) && handleSetOpenLoader(true);    
+                        }
+                        console.log(p);
                         return ``;
                     }}
-                initialState={(active) => false}
+                initialState={(active) => ()=>{
+                    console.log(active);
+                    if(!active){
+                        handleSetOpenLoader(false); 
+                        handleStatusPlay(true);
+                    }
+                }}
             />
             <LoaderApp 
                 modalIsOpen={openLoader}

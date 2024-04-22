@@ -1,7 +1,7 @@
 import { ModalPointers } from "../../../../../components/ModalPointers"
 import { DescripcionICComponent } from "../../components/DescripcionICComponent"
-import ImgZonaPoa from './../../../../../assets/img/ImagenesComparada/4. Suba Centro - Plaza Fundancional 360.png';
-import ImgZonaPoaAntigua from './../../../../../assets/img/ImagenesComparada/4. Suba Centro - Plaza Fundacnional (Antigua).jpg';
+import ImgZonaPoa from './../../../../../assets/img/ImagenesComparada/4. Suba Centro - Plaza Fundancional 360.webp';
+import ImgZonaPoaAntigua from './../../../../../assets/img/ImagenesComparada/4. Suba Centro - Plaza Fundacnional (Antigua).webp';
 
 export const ICPointer4 = ( { 
         modalIsOpen,
