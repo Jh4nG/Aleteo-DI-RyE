@@ -56,11 +56,11 @@ export const Background = () => {
                         }else{
                             (!openLoader) && handleSetOpenLoader(true);    
                         }
-                        console.log(p);
+                        // console.log(p);
                         return ``;
                     }}
                 initialState={(active) => ()=>{
-                    console.log(active);
+                    // console.log(active);
                     if(!active){
                         handleSetOpenLoader(false); 
                         handleStatusPlay(true);

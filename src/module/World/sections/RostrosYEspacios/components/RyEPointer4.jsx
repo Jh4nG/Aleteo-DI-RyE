@@ -9,17 +9,16 @@ export const RyEPointer4 = ( {
     const Component = ()=> {
         return (
             <DescripcionRyEComponent 
-                iframe={''}
+                iframe={<iframe width="560" height="315" src="https://www.youtube.com/embed/ulGazC3aFqg?si=h_YHe5vSjdOXIr0m" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>}
                 description={
                     <>
                         <p>
-                            El paro que se realizó en diferentes espacios de Suba entre el 2019 y 2021, fue un evento histórico que tuvo como protagonistas a diversos jóvenes de la localidad. Este videoclip documental, desea conmemorar este suceso. 
+                            El paro que se realizó en diferentes espacios de Suba entre el 2019 y 2021, fue un evento histórico que tuvo como protagonistas a diversos jóvenes de la localidad. Este videoclip documental, desea conmemorar este suceso.  
                         </p>
 
                         <p>
-                            <strong>Director y montajista:</strong> Edison González
+                            <strong>Director y montajista:</strong> Edison González <br />
                             <strong>Música:</strong> Kevin Sánchez
-                            <strong>Voz: </strong>
                         </p>
                         <p>
                             <strong>Material de archivo: </strong><br />
@@ -40,7 +39,7 @@ export const RyEPointer4 = ( {
         <>
             <ModalPointers 
                 modalIsOpen={modalIsOpen}
-                title={''}
+                title={'Fugaz'}
                 Content={Component}
                 handleModalOpen={handleModalOpen}
                 classContent={"PointerBg-RyE"}
