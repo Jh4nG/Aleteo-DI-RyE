@@ -30,13 +30,13 @@ const PointerChinche = {
             action : 'Pointer4',
             rotation : [0, 2, .7]
         },
-        { // 5
-            scale : 0.1,
-            // x, y, z
-            position : [2.49, 0.55, -0],
-            action : 'Pointer5',
-            rotation : [-.6, 3, .7]
-        }
+        // { // 5
+        //     scale : 0.1,
+        //     // x, y, z
+        //     position : [2.49, 0.55, -0],
+        //     action : 'Pointer5',
+        //     rotation : [-.6, 3, .7]
+        // }
     ],
     'ImagenComparada' : [
         {
